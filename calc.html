@@ -1,54 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <script type="text/javascript" src="https://livejs.com/live.js"></script>
       <title>Caliculator</title>
    </head>
    <body>
-      <div id="app">
-         <input type="number" name="num1" v-model.number="num1"> +
-         <input type="number" name="num2" v-model.number="num2"> +
-         <input type="number" name="num3" v-model.number="num3"> +
-         <input type="number" name="num4" v-model.number="num4"> +
-         <input type="number" name="num5" v-model.number="num5"> =
-         <span class="error" :class="classObject">{{ answer }}</span>
+      <div id="app" class="container">
+         <div class="item">
+            <input type="number" name="num1" v-model.number="num1" />
+         </div>
+         <div class="item">+</div>
+         <div class="item">
+            <input type="number" name="num2" v-model.number="num2" />
+         </div>
+         <div class="item">+</div>
+         <div class="item">
+            <input type="number" name="num3" v-model.number="num3" />
+         </div>
+         <div class="item">+</div>
+         <div class="item">
+            <input type="number" name="num4" v-model.number="num4" />
+         </div>
+         <div class="item">+</div>
+         <div class="item">
+            <input type="number" name="num5" v-model.number="num5" />
+         </div>
+         <div class="item">=</div>
+         <div class="item">
+            <span class="error" :class="classObject">{{ answer }}</span>
+         </div>
       </div>
 
       <style>
          .success {
             color: green;
          }
+
+         .container {
+            width: 100%;
+            display: flex;
+            justify-content="space-between";
+         background: #eee;
+         padding: 1rem 0;
+         }
+
+         .item{
+            width: 300px;
+            text-align: center;
+         }
       </style>
 
       <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
-      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
       <script>
          var app = new Vue({
-                     el: "#app",
-                     data: {
-                                 num1: 0,
-                                 num2: 0,
-                                 num3: 0,
-                                 num4: 0,
-                                 num5: 0,
-                                 classObject: {
-                                             success: true
-                                          }
-                              },
-                     computed: {
-                                 answer: function(){
-                                             return this.num1 + this.num2 + this.num3 + this.num4 + this.num5;
-                                          },
-                                 classObject: function(){
-                                             if(this.answer > 25) {
-                                                         success: false
-                                                      }
-                                          }
-                              }
-                  });
+            el: "#app",
+            data: {
+               num1: 0,
+               num2: 0,
+               num3: 0,
+               num4: 0,
+               num5: 0,
+               classObject: {
+                  success: true,
+               },
+            },
+            computed: {
+               answer: function () {
+                  return (
+                     this.num1 + this.num2 + this.num3 + this.num4 + this.num5
+                  );
+               },
+               classObject: function () {
+                  if (this.answer > 25) {
+                     success: false;
+                  }
+               },
+            },
+         });
       </script>
    </body>
 </html>
-∆
