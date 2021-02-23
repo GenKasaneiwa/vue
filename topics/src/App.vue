@@ -79,6 +79,11 @@
    </v-app>
 </template>
 
+<style lang="scss">
+   /* 共通のscssの読み込み */
+   @import "./assets/scss/main.scss";
+ </style>
+
 <script>
 export default {
    data() {
