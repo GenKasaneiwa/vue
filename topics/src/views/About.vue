@@ -1,5 +1,21 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <iframe
+      src="https://yellow.gray-code.com/"
+      width="100%"
+      height="100vh"
+    ></iframe>
   </div>
 </template>
+
+<style scope>
+.about {
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+</style>
